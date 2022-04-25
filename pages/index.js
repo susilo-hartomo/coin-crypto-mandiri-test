@@ -434,17 +434,37 @@ export default function Home() {
 				open={modalDetail}
 				keepMounted
 				onClose={() => setModalDetail(false)}
+				style={{ minWidth: 550 }}
 				aria-describedby='alert-dialog-slide-description'>
-				<DialogTitle>Detain coint info</DialogTitle>
+				<DialogTitle>Detail coin info</DialogTitle>
 				<DialogContent>
-					<DialogContentText id='alert-dialog-slide-description'>{detailCoin.name}</DialogContentText>
+					<DialogContentText id='alert-dialog-slide-description'>
+						<Typography style={{ width: 400, display: 'flex' }}>
+							<div style={{ minWidth: 200 }}> ID </div> {detailCoin.id}
+						</Typography>
+						<Typography style={{ width: 400, display: 'flex' }}>
+							<div style={{ minWidth: 200 }}> Name</div> {detailCoin.name}
+						</Typography>
+						<Typography style={{ width: 400, display: 'flex' }}>
+							<div style={{ minWidth: 200 }}> Symbol</div> {detailCoin.symbol}
+						</Typography>
+						<Typography style={{ width: 400, display: 'flex' }}>
+							<div style={{ minWidth: 200 }}> Type</div> {detailCoin.type}
+						</Typography>
+						<Typography style={{ width: 400, display: 'flex' }}>
+							<div style={{ minWidth: 200 }}> Active</div> {`${detailCoin.is_active}`}
+						</Typography>
+						<Typography style={{ width: 400, display: 'flex' }}>
+							<div style={{ minWidth: 200 }}> Is New?</div> {`${detailCoin?.is_new}`}
+						</Typography>
+					</DialogContentText>
 				</DialogContent>
 				<DialogActions>
 					<Button onClick={() => setModalDetail(false)}>Close</Button>
 				</DialogActions>
 			</Dialog>
 
-			<footer className={styles.footer}>Nama : Susilo Hartomo (susilo.hartmo@sci.ui.ac.id)</footer>
+			<footer className={styles.footer}>Nama : Susilo Hartomo (susilo.hartomo@sci.ui.ac.id)</footer>
 		</div>
 	);
 }
